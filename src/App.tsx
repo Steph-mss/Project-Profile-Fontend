@@ -32,7 +32,6 @@ function App() {
           setResult({
             ...data.result,
             score: data.score,
-            justification: data.justification
           });
           setIsLoading(false);
           setError(null);
