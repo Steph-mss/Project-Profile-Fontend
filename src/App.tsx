@@ -27,7 +27,13 @@ function App() {
         setStatus(data.status);
 
         if (data.status === 'done' || data.status === 'failed') {
-          setResult(data.result);
+          // Enrich result with score and justification from job
+          // setResult(data.result);
+          setResult({
+            ...data.result,
+            score: data.score,
+            justification: data.justification
+          });
           setIsLoading(false);
           setError(null);
           setPollCount(0);
